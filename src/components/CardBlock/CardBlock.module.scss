@@ -1,0 +1,37 @@
+.card-block {
+  width: 100vw;
+  height: 240px;
+  position: relative;
+
+  margin-bottom: 4rem;
+  .card-block__background-image {
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/bg-main-mobile.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .card-block__card-back-block {
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    right: 30px;
+
+    width: 75vw;
+    height: auto;
+    aspect-ratio: 16/8.6;
+  }
+  .card-block__card-front-block {
+    position: absolute;
+    z-index: 2;
+    bottom: -43px;
+    left: 20px;
+    width: 75vw;
+    aspect-ratio: 16/8.6;
+    height: auto;
+  }
+}
+
+// width: 447px;
+// height: 245px;

@@ -1,0 +1,36 @@
+@import 'src/styles/variables';
+
+.field {
+  margin-bottom: 1.3rem;
+  .field__label {
+    font-size: 13px;
+    letter-spacing: 0.1rem;
+    display: block;
+    color: $veryDarkViolet;
+  }
+  .field__input {
+    display: block;
+    width: 100%;
+    height: calc(2.5rem + 2px);
+    margin-top: 0.5rem;
+    padding: 0.75rem 0.75rem;
+
+    letter-spacing: 0.1rem;
+    font-size: 15px;
+    color: $veryDarkViolet;
+    text-transform: uppercase;
+
+    background-color: transparent;
+    border: 1px solid $lightGrayishViolet;
+    border-radius: 0.5rem;
+
+    // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    &::placeholder {
+      color: $lightGrayishViolet;
+      text-transform: none;
+    }
+    &:focus {
+      border-color: $veryDarkViolet;
+    }
+  }
+}
