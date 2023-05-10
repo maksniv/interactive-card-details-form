@@ -1,29 +1,70 @@
-/* xs (<=543px) */
-@media (max-width: 575px) {
-}
-
-/* sm (>=576 и <=767) */
-@media (min-width: 576px) and (max-width: 767px) {
-}
-
-/* md (>=768 и <=991) */
-@media (min-width: 768px) and (max-width: 991px) {
-}
-
-/* lg (>=992 и <=1199) */
-@media (min-width: 992px) and (max-width: 1199px) {
-}
-
-/* xl (>=1200) */
-@media (min-width: 1200px) {
-}
-
 .app {
-  width: 100wh;
+  min-width: 100vw;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
   min-width: 320px;
+  .app__FormBlock {
+    width: 100%;
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* xs (<=543px) */
+@media (max-width: 575px) {
+  .app {
+    width: 100wh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .app__FormBlock {
+      align-items: flex-start;
+    }
+  }
+}
+
+/* sm (>=576 и <=767) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .app {
+    width: 100wh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .app__FormBlock {
+      align-items: flex-start;
+    }
+  }
+}
+
+/* md (>=768 и <=991) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .app {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* lg (>=992 и <=1199) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .app {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* xl (>=1200) */
+@media (min-width: 1200px) {
+  .app {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
 }

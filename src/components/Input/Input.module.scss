@@ -1,7 +1,7 @@
 @import 'src/styles/variables';
 
 .field {
-  margin-bottom: 1.3rem;
+  position: relative;
   .field__label {
     font-size: 13px;
     letter-spacing: 0.1rem;
@@ -23,8 +23,6 @@
     background-color: transparent;
     border: 1px solid $lightGrayishViolet;
     border-radius: 0.5rem;
-
-    // transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     &::placeholder {
       color: $lightGrayishViolet;
       text-transform: none;
@@ -32,5 +30,11 @@
     &:focus {
       border-color: $veryDarkViolet;
     }
+  }
+  .field__errors {
+    font-size: 10px;
+    position: absolute;
+    color: red;
+    bottom: -17px;
   }
 }

@@ -7,7 +7,9 @@ function App() {
     <>
       <div className={styles.app}>
         <CardBlock></CardBlock>
-        <Form></Form>
+        <div className={styles.app__FormBlock}>
+          <Form></Form>
+        </div>
       </div>
     </>
   );

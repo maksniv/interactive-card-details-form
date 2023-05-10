@@ -3,8 +3,8 @@
 .form {
   display: flex;
   flex-direction: column;
+  gap: 1.3rem;
 
-  width: 100vw;
   height: auto;
   min-width: 320px;
   max-width: 500px;
@@ -27,6 +27,45 @@
     }
   }
   .form__button {
+    width: 100%;
+    height: calc(3.25rem + 2px);
+    border: none;
+    border-radius: 0.5rem;
+    color: $white;
+    background-color: $veryDarkViolet;
+  }
+}
+
+.form__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 387px;
+  min-width: 320px;
+  max-width: 500px;
+  padding: 1.7rem;
+  .form__success_logo {
+    width: 80px;
+    height: 80px;
+
+    background-image: url('/images/icon-complete.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .form__success_title {
+    letter-spacing: 0.1rem;
+    color: $veryDarkViolet;
+  }
+  .form__success_description {
+    letter-spacing: 0.1rem;
+    color: $lightGrayishViolet;
+  }
+
+  .form__success_button {
     width: 100%;
     height: calc(3.25rem + 2px);
     border: none;
