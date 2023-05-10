@@ -23,6 +23,22 @@
     background-color: transparent;
     border: 1px solid $lightGrayishViolet;
     border-radius: 0.5rem;
+    &::-webkit-input-placeholder {
+      color: $lightGrayishViolet;
+      text-transform: none;
+    }
+    &::-moz-placeholder {
+      color: $lightGrayishViolet;
+      text-transform: none;
+    }
+    &:-ms-input-placeholder {
+      color: $lightGrayishViolet;
+      text-transform: none;
+    }
+    &::-ms-input-placeholder {
+      color: $lightGrayishViolet;
+      text-transform: none;
+    }
     &::placeholder {
       color: $lightGrayishViolet;
       text-transform: none;
@@ -34,7 +50,7 @@
   .field__errors {
     font-size: 10px;
     position: absolute;
-    color: red;
+    color: $inputErrors;
     bottom: -17px;
   }
 }

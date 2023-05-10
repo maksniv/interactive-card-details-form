@@ -26,11 +26,6 @@ function Form() {
 
   const { errors } = useFormState({ control });
 
-  //     event.target.value = value
-  //       .replace(/[^0-9]/g, '')
-  //       .replace(/(.{4})/g, '$1 ')
-  //       .trim();
-
   const onSubmit = (data) => {
     console.log(data);
     setSuccess(!success);

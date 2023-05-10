@@ -15,7 +15,7 @@ function CardBlock() {
         </div>
       </section>
     </>
-  );
+  )
 }
 
 export default CardBlock;

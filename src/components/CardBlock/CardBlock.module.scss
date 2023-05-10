@@ -94,7 +94,7 @@
 }
 
 /* xl (>=1200) */
-@media (min-width: 1200px) {
+@media (min-width: 1200px) and (max-width: 1399px){
   .card-block {
     flex: 1;
     height: 1000px;
@@ -107,6 +107,24 @@
       top: 28%;
       left: 35%;
       width: 30vw;
+    }
+  }
+}
+
+/* xl (>=1200) */
+@media (min-width: 1399px) {
+  .card-block {
+    flex: 1;
+    height: 1000px;
+    .card-block__card-back-block {
+      top: 55%;
+      right: -40%;
+      width: 25vw;
+    }
+    .card-block__card-front-block {
+      top: 28%;
+      left: 35%;
+      width: 25vw;
     }
   }
 }
