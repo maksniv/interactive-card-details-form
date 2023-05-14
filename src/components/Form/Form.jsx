@@ -13,6 +13,14 @@ import { useForm, Controller, useFormState } from 'react-hook-form';
 function Form() {
   const [success, setSuccess] = useState(true);
 
+  const [shake, setShake] = useState(false);
+
+  const animate = () => {
+    setShake(true);
+
+    setTimeout(() => setShake(false), 700);
+  };
+
   const { handleSubmit, control, reset } = useForm({
     mode: 'onChange',
     defaultValues: {
@@ -24,7 +32,7 @@ function Form() {
     },
   });
 
-  const { errors } = useFormState({ control });
+  const { errors, isValid } = useFormState({ control });
 
   const onSubmit = (data) => {
     console.log(data);
@@ -35,7 +43,11 @@ function Form() {
   return (
     <>
       {success ? (
-        <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+        <form
+          className={styles.form}
+          onSubmit={handleSubmit(onSubmit)}
+          autoComplete="off"
+        >
           <Controller
             name={'cardholderName'}
             control={control}
@@ -137,7 +149,16 @@ function Form() {
               />
             </div>
           </div>
-          <button className={styles.form__button}>Confirm</button>
+          <button
+            onClick={animate}
+            className={
+              shake
+                ? styles.form__button + ' ' + styles.shake
+                : styles.form__button
+            }
+          >
+            Confirm
+          </button>
         </form>
       ) : (
         <div className={styles.form__success}>

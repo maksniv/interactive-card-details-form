@@ -16,7 +16,7 @@ export const cardNumberValidation = {
     if (value.match(/^[0-9,\s]{19}$/)) {
       return true;
     }
-    return 'Wrong format, numbers only';
+    return 'Wrong format';
   },
 };
 
