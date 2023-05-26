@@ -16,8 +16,26 @@
   border-radius: 0.5rem;
   .card-back__CVC {
     position: absolute;
-    font-size: 10px;
+    font-size: 0.7rem;
     right: 12%;
     top: 45%;
+  }
+}
+
+/* xl (>=1200) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .card-back {
+    .card-back__CVC {
+      font-size: 1rem;
+    }
+  }
+}
+
+/* xl (>=1200) */
+@media (min-width: 1399px) {
+  .card-back {
+    .card-back__CVC {
+      font-size: 1rem;
+    }
   }
 }

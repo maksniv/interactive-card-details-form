@@ -50,3 +50,31 @@
     right: 10%;
   }
 }
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .card-front {
+    .card-front__CARDHOLDER-NAME {
+      font-size: 1rem;
+    }
+    .card-front__CARD-NUMBER {
+      font-size: 1.5rem;
+    }
+    .card-front__DATA {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (min-width: 1399px) {
+  .card-front {
+    .card-front__CARDHOLDER-NAME {
+      font-size: 1rem;
+    }
+    .card-front__CARD-NUMBER {
+      font-size: 1.5rem;
+    }
+    .card-front__DATA {
+      font-size: 1rem;
+    }
+  }
+}

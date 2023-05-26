@@ -7,10 +7,20 @@ import {
 } from '../../utils/validation';
 import Input from '../Input/Input';
 import styles from './Form.module.scss';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { CardDataContext } from '../../context';
 import { useForm, Controller, useFormState } from 'react-hook-form';
 
 function Form() {
+  const {
+    updateCardholderName,
+    updateCardNumber,
+    updateMM,
+    updateYY,
+    updateCVC,
+    clearForm,
+  } = useContext(CardDataContext);
+
   const [success, setSuccess] = useState(true);
 
   const [shake, setShake] = useState(false);
@@ -32,11 +42,12 @@ function Form() {
     },
   });
 
-  const { errors, isValid } = useFormState({ control });
+  const { errors } = useFormState({ control });
 
   const onSubmit = (data) => {
     console.log(data);
     setSuccess(!success);
+    clearForm();
     reset();
   };
 
@@ -59,7 +70,10 @@ function Form() {
                 label={'CARDHOLDER NAME'}
                 placeholder={'e.g. Jane Appleseed'}
                 inputMode={'text'}
-                onChange={(event) => field.onChange(event)}
+                onChange={(event) => {
+                  updateCardholderName(event.target.value);
+                  field.onChange(event);
+                }}
                 value={field.value}
                 errors={errors.cardholderName?.message}
               />
@@ -82,6 +96,7 @@ function Form() {
                     .replace(/[^0-9]/g, '')
                     .replace(/(.{4})/g, '$1 ')
                     .trim();
+                  updateCardNumber(value);
                   field.onChange(value);
                 }}
                 value={field.value}
@@ -103,7 +118,10 @@ function Form() {
                     placeholder={'MM'}
                     maxLength={'2'}
                     inputMode={'numeric'}
-                    onChange={(event) => field.onChange(event)}
+                    onChange={(event) => {
+                      updateMM(event.target.value);
+                      field.onChange(event);
+                    }}
                     value={field.value}
                     errors={errors.mm?.message}
                   />
@@ -121,7 +139,10 @@ function Form() {
                     placeholder={'YY'}
                     maxLength={'2'}
                     inputMode={'numeric'}
-                    onChange={(event) => field.onChange(event)}
+                    onChange={(event) => {
+                      updateYY(event.target.value);
+                      field.onChange(event);
+                    }}
                     value={field.value}
                     errors={errors.yy?.message}
                   />
@@ -141,7 +162,10 @@ function Form() {
                     placeholder={'e.g. 123'}
                     maxLength={'3'}
                     inputMode={'numeric'}
-                    onChange={(event) => field.onChange(event)}
+                    onChange={(event) => {
+                      updateCVC(event.target.value);
+                      field.onChange(event);
+                    }}
                     value={field.value}
                     errors={errors.cvc?.message}
                   />
